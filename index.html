@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="assets/javascript/game.js"></script>
+  </head>
+
+
+<body>
+    <h1>Jay's Trivia Extravaganza</h1>
+    <h2>1. What planet is the secret rebel base located in episode IV A New Hope?</h2>
+    <input type="radio" name="question1" value="a"><p>a: Yavin IV</p>
+    <input type="radio" name="question1" value="b"><p>b: Dagobah</p>
+    <input type="radio" name="question1" value="c"><p>c: Coruscant</p>
+
+    <h2>2. What icy planet do the rebels escape from to start Empire Strikes Back?</h2>
+    <input type="radio" name="question1" value="a"><p>a: Hoth</p>
+    <input type="radio" name="question1" value="b"><p>b: Bespin</p>
+    <input type="radio" name="question1" value="c"><p>c: Corellia</p>
+
+    <h2>3. Who is the only rebel pilot to survive both attack runs on the Death Stars?</h2>
+    <input type="radio" name="question1" value="a"><p>a: Wedge Antilles</p>
+    <input type="radio" name="question1" value="b"><p>b: Biggs Darklighter</p>
+    <input type="radio" name="question1" value="c"><p>c: Dak Ralter</p>
+
+    <h2>4. What is the name of Darth Vader's Super Star Destroyer?</h2>
+    <input type="radio" name="question1" value="a"><p>a: Executor</p>
+    <input type="radio" name="question1" value="b"><p>b: Victorious</p>
+    <input type="radio" name="question1" value="c"><p>c: Dauntless</p>
+
+    <h2>5. What item does Luke want to go to Toshii station to buy in episode IV?</h2>
+    <input type="radio" name="question1" value="a"><p>a: Power Convertrs</p>
+    <input type="radio" name="question1" value="b"><p>b: Fuel Rods</p>
+    <input type="radio" name="question1" value="c"><p>c: Arc Spanners</p>
+ 
+    <h2>6. What does Luke use to destroy the first Death Star?</h2>
+    <input type="radio" name="question1" value="a"><p>a: Ion Cannon</p>
+    <input type="radio" name="question1" value="b"><p>b: Tow Cable</p>
+    <input type="radio" name="question1" value="c"><p>c: Proton Torpedos</p>
+
+    <h2>7. Which rebel commander utters the famous phrase "it's a trap!"?</h2>
+    <input type="radio" name="question1" value="a"><p>a: Admiral Ackbar</p>
+    <input type="radio" name="question1" value="b"><p>b: General Dodonna</p>
+    <input type="radio" name="question1" value="c"><p>c: General Syndulla</p>
+
+    <input type="radio">
+    <input type="radio" name="question1" value="c">c: 10
+</body>
+
+<script>
+var myQuestions = [
+  {
+    question: "Who is the strongest?",
+    answers: {
+      a: "Superman",
+      b: "The Terminator",
+      c: "Waluigi, obviously"
+    },
+    correctAnswer: "c"
+  },
+
+function showQuestions(questions, quizContainer){
+	// we'll need a place to store the output and the answer choices
+	var output = [];
+	var answers;
+
+	// for each question...
+	for(var i=0; i<questions.length; i++){
+		
+		// first reset the list of answers
+		answers = [];
+
+		// for each available answer to this question...
+		for(letter in questions[i].answers){
+
+			// ...add an html radio button
+			answers.push(
+				'<label>'
+					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+					+ letter + ': '
+					+ questions[i].answers[letter]
+				+ '</label>'
+			);
+		}
+
+		// add this question and its answers to the output
+		output.push(
+			'<div class="question">' + questions[i].question + '</div>'
+			+ '<div class="answers">' + answers.join('') + '</div>'
+		);
+	}
+
+	// finally combine our output list into one string of html and put it on the page
+	quizContainer.innerHTML = output.join('');
+}
+
+</script>
+</html>
