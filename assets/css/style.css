@@ -7,7 +7,26 @@ h2 {
     font-size: 26px;
 }
 
-#sound {
-    visibility: hidden;
+#timer {
+    color: red;
+    font-size: 24px;
 }
-/* fix the styling because it looks terrible */
+
+p {
+    color: #808080;
+}
+
+#scoreRight {
+    color: white;
+    font-size: 40px;
+}
+
+#scoreWrong {
+    color: white;
+    font-size: 40px;
+}
+
+#scoreUnanswered {
+    color: white;
+    font-size: 40px;
+}
