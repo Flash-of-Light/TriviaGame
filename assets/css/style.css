@@ -30,3 +30,7 @@ p {
     color: white;
     font-size: 40px;
 }
+
+#test {
+    float: left;
+}
