@@ -5,75 +5,171 @@
   <title>Star Wars Trivia Game</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> 
   <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="assets/javascript/app.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 </head>
 
-<body>
+<body> 
     <!-- trivia image -->
-    <img src="assets/images/starwarstrivia_preview00.jpg" id="triviaStart" class="img-fluid" alt="Responsive image">
-  
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 col-sm-12 col-xs-12">       
+                <img src="assets/images/starwarstrivia_preview00.jpg" id="triviaStart" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 col-sm-12 col-xs-12"> 
+            <button type="start" id="start" class="btn btn-success btn-lg">Jump to Lightspeed</button>
+        </div>
+    </div>
+</div>
+
     <!-- song play -->
     <audio id="my_audio" src="Imperial March.mp3" loop="loop"></audio>
     
     <br>
-    <br>
-
-    <!-- start button -->
-    <button type="start" id="start" class="btn btn-success btn-lg">Jump to Lightspeed</button>
-
-    <!-- timer div -->
-    <div id="timer">2:00</div>
 
     <!-- score report div to be populated -->
     <div id="scoreRight"></div>
     <div id="scoreWrong"></div>
     <div id="scoreUnanswered"></div>
-    <br>
-    <br>
-
-    <!-- form with questions & answers -->
+    
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 text-center offset-md-2 col-sm-12 col-xs-12"> 
+            <!-- timer div -->
+                <div id="timer">2:00</div>
+            <!-- form with questions & answers -->
   <form name="sw_trivia" id="questions" onsubmit="score()">
+    <br>
     <h2>1. What planet is the secret rebel base located in episode IV A New Hope?</h2>
-    <input type="radio" name="question1" value="a"><p>a: Yavin IV</p>
-    <input type="radio" name="question1" value="b"><p>b: Dagobah</p>
-    <input type="radio" name="question1" value="c"><p>c: Coruscant</p>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <input type="radio" name="question1" value="a"><p>a: Yavin IV</p>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="question1" value="b"><p>b: Dagobah</p>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="question1" value="c"><p>c: Coruscant</p>
+        </div>
+    </div>
+<br>
 <br>
     <h2>2. Who is the only rebel pilot to survive both attack runs on the Death Stars?</h2>
-    <input type="radio" name="question2" value="a"><p>a: Biggs Darklighter</p>
-    <input type="radio" name="question2" value="b"><p>b: Wedge Antilles</p>
-    <input type="radio" name="question2" value="c"><p>c: Dak Ralter</p>
+    <br>
+        <div class="row">
+        <div class="col-md-4">
+            <input type="radio" name="question2" value="a"><p>a: Biggs Darklighter</p>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="question2" value="b"><p>b: Wedge Antilles</p>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="question2" value="c"><p>c: Dak Ralter</p>
+        </div>
+    </div>
+<br>
 <br>
     <h2>3. What is the name of Darth Vader's Super Star Destroyer?</h2>
-    <input type="radio" name="question3" value="a"><p>a: Dauntless</p>
-    <input type="radio" name="question3" value="b"><p>b: Victorious</p>
-    <input type="radio" name="question3" value="c"><p>c: Executor</p>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <input type="radio" name="question3" value="a"><p>a: Dauntless</p>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="question3" value="b"><p>b: Victorious</p>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="question3" value="c"><p>c: Executor</p>
+        </div>
+    </div>
 <br>
-    <h2>4. What item does Luke want to go to Tosche station to buy in episode IV?</h2>
-    <input type="radio" name="question4" value="a"><p>a: Fuel Rods</p>
-    <input type="radio" name="question4" value="b"><p>b: Power Converters</p>
-    <input type="radio" name="question4" value="c"><p>c: Arc Spanners</p>
+<br>
+    <h2>4. What item does Luke want to buy at Tosche station in episode IV?</h2>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <input type="radio" name="question4" value="a"><p>a: Fuel Rods</p>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="question4" value="b"><p>b: Power Converters</p>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="question4" value="c"><p>c: Arc Spanners</p>
+        </div>
+    </div>
+<br>
 <br>
     <h2>5. What icy planet do the rebels escape from to start Empire Strikes Back?</h2>
+    <br>
+    <div class="row">
+            <div class="col-md-4">
     <input type="radio" name="question5" value="a"><p>a: Hoth</p>
-    <input type="radio" name="question5" value="b"><p>b: Bespin</p>
-    <input type="radio" name="question5" value="c"><p>c: Corellia</p>
+            </div>
+    <div class="col-md-4">
+        <input type="radio" name="question5" value="b"><p>b: Bespin</p>
+    </div>
+    <div class="col-md-4">
+        <input type="radio" name="question5" value="c"><p>c: Corellia</p>
+    </div>
+    </div>
+
+<br>
 <br>
     <h2>6. What does Luke use to destroy the first Death Star?</h2>
-    <input type="radio" name="question6" value="a"><p>a: Ion Cannon</p>
-    <input type="radio" name="question6" value="b"><p>b: Lasers</p>
-    <input type="radio" name="question6" value="c"><p>c: Proton Torpedos</p>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+                <input type="radio" name="question6" value="a"><p>a: Ion Cannon</p>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="question6" value="b"><p>b: Lasers</p>
+        </div>
+        <div class="col-md-4">
+            <input type="radio" name="question6" value="c"><p>c: Proton Torpedos</p>
+        </div>
+    </div>
+<br>
 <br>
     <h2>7. Which rebel commander utters the famous phrase "it's a trap!"?</h2>
-    <input type="radio" name="question7" value="a"><p>a: General Syndulla</p>
-    <input type="radio" name="question7" value="b"><p>b: General Dodonna</p>
-    <input type="radio" name="question7" value="c"><p>c: Admiral Ackbar</p> 
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <input type="radio" name="question7" value="a"><p>a: General Syndulla</p>
+        </div>
+    <div class="col-md-4">
+        <input type="radio" name="question7" value="b"><p>b: General Dodonna</p>
+    </div>
+    <div class="col-md-4">
+        <input type="radio" name="question7" value="c"><p>c: Admiral Ackbar</p> 
+    </div>
   </form>
+  <br>
+  <br>
+  <br>
+  <div class="row">
+        <div class="col-md-8 md-offset-2">
+            <button type="submit" id="submit" class="btn btn-danger text-center btn-lg">Submit</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
 <br>
 <br>
-<!-- submit button -->
-<button type="submit" id="submit" class="btn btn-success btn-lg">Submit</button>
+
 </body>
 </html>
