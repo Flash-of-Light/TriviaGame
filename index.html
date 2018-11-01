@@ -34,7 +34,7 @@
 </div>
 
     <!-- song play -->
-    <audio id="my_audio" src="Imperial March.mp3" loop="loop"></audio>
+    <!-- <audio id="my_audio" src="Imperial March.mp3" loop="loop"></audio> -->
     
     <br>
 
@@ -50,13 +50,13 @@
             <!-- timer div -->
                 <div id="timer">2:00</div>
             <!-- form with questions & answers -->
-  <form name="sw_trivia" id="questions">
+  <form name="sw_trivia" id="questions" onsubmit="score()">
     <br>
     <h2>1. What planet is the secret rebel base located in episode IV A New Hope?</h2>
     <br>
     <div class="row">
         <div class="col-md-4">
-            <input type="radio" name="question1right" value="a"><p>a: Yavin IV</p>
+            <input type="radio" name="question1" value="a"><p>a: Yavin IV</p>
         </div>
         <div class="col-md-4">
             <input type="radio" name="question1" value="b"><p>b: Dagobah</p>
@@ -74,7 +74,7 @@
             <input type="radio" name="question2" value="a"><p>a: Biggs Darklighter</p>
         </div>
         <div class="col-md-4">
-            <input type="radio" name="question2right" value="b"><p>b: Wedge Antilles</p>
+            <input type="radio" name="question2" value="b"><p>b: Wedge Antilles</p>
         </div>
         <div class="col-md-4">
             <input type="radio" name="question2" value="c"><p>c: Dak Ralter</p>
@@ -92,7 +92,7 @@
             <input type="radio" name="question3" value="b"><p>b: Victorious</p>
         </div>
         <div class="col-md-4">
-            <input type="radio" name="question3right" value="c"><p>c: Executor</p>
+            <input type="radio" name="question3" value="c"><p>c: Executor</p>
         </div>
     </div>
 <br>
@@ -104,7 +104,7 @@
             <input type="radio" name="question4" value="a"><p>a: Fuel Rods</p>
         </div>
         <div class="col-md-4">
-            <input type="radio" name="question4right" value="b"><p>b: Power Converters</p>
+            <input type="radio" name="question4" value="b"><p>b: Power Converters</p>
         </div>
         <div class="col-md-4">
             <input type="radio" name="question4" value="c"><p>c: Arc Spanners</p>
@@ -116,7 +116,7 @@
     <br>
     <div class="row">
             <div class="col-md-4">
-    <input type="radio" name="question5right" value="a"><p>a: Hoth</p>
+    <input type="radio" name="question5" value="a"><p>a: Hoth</p>
             </div>
     <div class="col-md-4">
         <input type="radio" name="question5" value="b"><p>b: Bespin</p>
@@ -138,7 +138,7 @@
             <input type="radio" name="question6" value="b"><p>b: Lasers</p>
         </div>
         <div class="col-md-4">
-            <input type="radio" name="question6right" value="c"><p>c: Proton Torpedos</p>
+            <input type="radio" name="question6" value="c"><p>c: Proton Torpedos</p>
         </div>
     </div>
 <br>
@@ -153,13 +153,13 @@
         <input type="radio" name="question7" value="b"><p>b: General Dodonna</p>
     </div>
     <div class="col-md-4">
-        <input type="radio" name="question7right" value="c"><p>c: Admiral Ackbar</p> 
+        <input type="radio" name="question7" value="c"><p>c: Admiral Ackbar</p> 
     </div>
   </form>
   <br>
   <br>
   <br>
-    <div class="row">
+  <div class="row">
         <div class="col-md-8 md-offset-2">
             <button type="submit" id="submit" class="btn btn-danger text-center btn-lg">Submit</button>
         </div>
