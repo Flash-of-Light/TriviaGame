@@ -4,6 +4,7 @@ $(document).ready(function() {
   $("#timer").hide();
   $("#questions").hide();
   $("#submit").hide();
+  $("#again").hide();
   
   //hide start button when clicked & start music
   $("#start").on("click", function() {
@@ -22,38 +23,37 @@ $(document).ready(function() {
 
 //   function score() {
 //   // score question 1
-//   $('input:radio').on('change', function() {
-//   $('input:radio').removeClass('my-class-for-selected-buttons') // Here!
-
-//   if( $(this).is(':checked') ) {
-//       $(this).addClass('my-class-for-selected-buttons')
+  var x = document.querySelector('input[name = "question1"]:checked').checked;
+  console.log(x);
+//   if (x === "a") {
+//     correct++;
 //   }
-// })
-  
-//     if (x === "a") {
-//       correct++;
-//     }
-//     else if (x === null || x === undefined) {
-//           unanswered++;
-//     }
-//     else if (x === "b" || x === "c") {
-//       incorrect++;
-//     };
-//     console.log(x);
+//   // else if (x != "a" && x!= "b" && x != "c") {
+//   //   unanswered++;
+//   // }
+//   else if (x === null) {
+//         unanswered++;
+//       }
+//   else if (x === "b" || x === "c") {
+//     incorrect++;
 //   };
+//   console.log(x);
+// }
   
   //display the score in the divs
   function displayScore() {
-    $("#scoreRight").html("<h1>You answered " + correct + " correctly! </h1>");
-    $("#scoreWrong").html("<h1>You answered " + incorrect + " incorrectly! </h1>");
-    $("#scoreUnanswered").html("<h1>You left " + unanswered + " blank. </h1>");
+    $("#scoreRight").append("<h1>You answered " + correct + " correctly! </h1>");
+    $("#scoreWrong").append("<h1>You answered " + incorrect + " incorrectly! </h1>");
+    $("#scoreUnanswered").append("<h1>You left " + unanswered + " blank. </h1>");
+    $("#again").show();
   };
 
   //hide submit button when clicked
   $("#submit").on("click", function() {
-    $(this).hide();
-    $("#timer").hide();
-    $("#questions").hide();
+    $(this).remove();
+    $("#timer").remove();
+    $("#questions").remove();
+    $("#again").show();
     // score();
     displayScore();
   });
@@ -77,7 +77,7 @@ $(document).ready(function() {
         $("#timer").hide();
         $("#questions").hide();
         $("#submit").hide();
-        score();
+        // score();
       }
     }
     tick();
